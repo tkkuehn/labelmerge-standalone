@@ -46,7 +46,7 @@ def merge_labels(base_ds, overlay_ds):
     for dataset in [base_ds, overlay_ds]:
         for name, arr in dataset.items():
             out_arr[arr] = overall_idx
-            out_labels[overall_idx] = overall_idx
+            out_labels[overall_idx] = overall_idx + 1
             out_names[overall_idx] = name
             overall_idx += 1
     out_metadata = pd.DataFrame({"index": out_labels, "name": out_names})
